@@ -1,0 +1,29 @@
+<title>Edit Employee</title>
+
+<body>
+    <h1>Edit Employee</h1>
+
+    <% if (errors !=undefined) { %>
+        <ul>
+            <% errors.forEach((error)=> { %>
+                <li>
+                    <%= error.msg %>
+                </li>
+                <% }) %>
+        </ul>
+        <% } %>
+
+             <form action="/employees/edit/:id" method="POST">
+                <label>EID</label>
+                <input type="text" name="eid" value= <%=employee.eid %> readonly> <br>
+                <label>Name:</label>
+                <input type="text" name="ename" value= <%=employee.ename %>> <br>
+                <label>Role:</label>
+                <input name="role" value= <%=employee.role %>> <br>
+                <label>Salary:</label>
+               <input type="text" name="salary" value=  <%=employee.salary %>> <br>
+                <input type="submit" value="Update">
+             </form>
+
+         <a href="/">Home</a>
+</body>

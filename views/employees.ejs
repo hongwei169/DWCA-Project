@@ -1,0 +1,41 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+  } 
+</style>
+
+<h1>Employees</h1>
+
+<table>
+    <tr>
+        <th>EID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Salary</th>
+        <th>Update</th>
+    </tr>
+
+    <% employees.forEach((data)=> { %>
+
+        <tr>
+            <td>
+                <%= data.eid %>
+            </td>
+            <td>
+                <%= data.ename %>
+            </td>
+            <td>
+                <%= data.role %>
+            </td>
+            <td>
+                <%= data.salary %>
+            </td>
+            <td>
+                <a href="/employees/edit/<%= data.eid %>">Update</a>
+            </td>
+        </tr>
+
+        <% }) %>
+</table>
+
+<a href="/">Home</a>
